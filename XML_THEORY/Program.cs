@@ -44,13 +44,11 @@ namespace XML_THEORY
         static void Main(string[] args)
         {
 
+            Console.Title = "Домашнее Задание - Латыпов Альфар";
+
             List<HabrNews> habrNews = new List<HabrNews>();
 
-
-
-
-
-            //----------------------------------------------------------//
+           
             XmlDocument doc1 = new XmlDocument();
             doc1.Load("https://habrahabr.ru/rss/interesting/");
 
