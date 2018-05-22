@@ -109,10 +109,26 @@ namespace XML_THEORY
 
 
             /* 2. На основании задания 1, сериализовать лист полученных объектов в XML и записать в файл.*/
+            
+            Directory.CreateDirectory(@"C:\SiteContent\"); //sozdal papku
 
+            FileInfo fi = new FileInfo(@"C:\SiteContent\TextContent.txt");  //открыли поток
+            FileStream fstr = fi.Create(); //создайте файл TextContent.txt
+            fstr.Close();
 
+            StreamWriter sw = new StreamWriter(@"C:\SiteContent\TextContent.txt");
+            foreach (var item in habrNews)
+            {
+                //запишите следующий текст
+                sw.Write(item.title); 
+                sw.Write(item.lint);
+                sw.Write(item.Description);
+                sw.Write(item.PubDate);
+                sw.WriteLine("\n");
+            }
+           
+            sw.Close();
 
-           // lkbhgvkjaelkv
 
             // КОНЕЦ ДОМАШНЕЙ РАБОТЫ
 
